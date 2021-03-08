@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     test-example:
-	image: wickerlabs/maintenance
+        image: wickerlabs/maintenance
         environment:
           #- TEAM_NAME=""
           #- TITLE="Site Maintenance"
