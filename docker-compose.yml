@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+    example:
+	image: wickerlabs/maintenance
+        environment:
+          #- TEAM_NAME=""
+          #- TITLE="Site Maintenance"
+          #- MAIL_ADDRESS="mail@domain.com"
+          #- LINK_COLOR="#dc8100"
+          - PORT=80
+          #- RESPONSE_CODE="503 Service Unavailable"
+          - HEADLINE=Test
+          - MESSAGE=Content
+          - VIRTUAL_HOST=${BASE_DOMAIN} #Needed if a subdomain should be assigned
+          - LETSENCRYPT_HOST=${BASE_DOMAIN} #Needed if a subdomain should be assigned
+          - LETSENCRYPT_EMAIL=${LE_DEFAULT_EMAIL} #Needed if a subdomain should be assigned
+        expose:
+            - "80"
+        networks:
+            - sub #Needed if a subdomain should be assigned
